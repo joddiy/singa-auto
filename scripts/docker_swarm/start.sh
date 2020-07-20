@@ -54,7 +54,7 @@ else
 
 fi
 bash ./scripts/docker_swarm/start_admin.sh || exit 1
-bash ./scripts/docker_swarm/start_web_admin.sh || exit 1
+# bash ./scripts/docker_swarm/start_web_admin.sh || exit 1
 
 echo "To use SINGA-Auto, use SINGA-Auto Client in the Python CLI"
 echo "A quickstart is available at https://nginyc.github.io/rafiki/docs/latest/src/user/quickstart.html"

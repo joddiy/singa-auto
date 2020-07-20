@@ -24,9 +24,13 @@ import argparse
 import os
 
 from singa_auto.client import Client
-from singa_auto.config import SUPERADMIN_EMAIL
+from singa_auto.config import SUPERADMIN_EMAIL, SUPERADMIN_PASSWORD
 from singa_auto.constants import BudgetOption, InferenceBudgetOption, InferenceJobStatus, ModelDependency
 from singa_auto.model import utils
+
+import sys
+sys.path.append(os.path.dirname(__file__) + '/../..')
+sys.path.append(os.path.dirname(__file__) + '/..')
 
 from examples.scripts.utils import gen_id, wait_until_train_job_has_stopped
 from examples.datasets.image_files.load_fashion_mnist import load_fashion_mnist
@@ -147,7 +151,7 @@ if __name__ == '__main__':
                         help='Host of SINGA-Auto instance')
     parser.add_argument('--web_admin_port',
                         type=int,
-                        default=os.environ.get('WEB_ADMIN_EXT_PORT', 3001),
+                        default=os.environ.get('WEB_ADMIN_EXT_PORT', 9540),
                         help='Port for SINGA-Auto Web Admin on host')
     parser.add_argument('--email',
                         type=str,
@@ -155,7 +159,7 @@ if __name__ == '__main__':
                         help='Email of user')
     parser.add_argument('--password',
                         type=str,
-                        default=os.environ.get('SUPERADMIN_PASSWORD'),
+                        default=SUPERADMIN_PASSWORD,
                         help='Password of user')
     parser.add_argument('--gpus',
                         type=int,

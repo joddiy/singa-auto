@@ -28,6 +28,7 @@ __pycache__/
 
 # Datasets
 data/*
+db/*
 !data/.gitkeep
 examples/data/image_classification/*
 
